@@ -36,7 +36,7 @@
 				"operationId": "GetMessage",
 				"responses": {
 					"200": {
-						"description": "Promise<BasicResponse>",
+						"description": "Promise of Basic Response",
 						"content": {
 							"application/json": {
 								"schema": {
@@ -46,7 +46,7 @@
 						}
 					}
 				},
-				"description": "Endpoint to retrieve a Message \"Hello {name} in JSON\"",
+				"description": "Endpoint to retrieve a Message \"Hello {name}\"\" in JSON",
 				"tags": [
 					"HelloController"
 				],
@@ -56,6 +56,65 @@
 						"description": "Name of user to be greeted",
 						"in": "query",
 						"name": "name",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/api/users": {
+			"get": {
+				"operationId": "GetUsers",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"description": "Endoint to retrieve all users from \"Users\" of DB",
+				"tags": [
+					"UserController"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"in": "query",
+						"name": "id",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			},
+			"delete": {
+				"operationId": "DeleteUser",
+				"responses": {
+					"200": {
+						"description": "User deleted",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"description": "Endpoint to delete a user by id",
+				"tags": [
+					"UserController"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"description": "Id of User to be deleted",
+						"in": "query",
+						"name": "id",
 						"required": false,
 						"schema": {
 							"type": "string"

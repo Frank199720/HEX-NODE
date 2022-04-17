@@ -7,6 +7,7 @@ import express, { Request , Response } from 'express';
 import helloRouter from './HelloRouter';
 import byeRouter from './ByeRouter';
 import { LogInfo } from '../utils/logger';
+import userRouter from './UserRouter';
 
 
 // Server instance
@@ -33,8 +34,8 @@ rootRouter.get('/', ( req : Request , res : Response) => {
 server.use('/',rootRouter);
 server.use('/hello',helloRouter);
 server.use('/goodbye',byeRouter);
-
 //Add more routes to the app
+server.use('/users',userRouter);
 
 
 export default server;

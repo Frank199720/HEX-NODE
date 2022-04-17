@@ -22,6 +22,6 @@ export const kataEntity = ()=>{
         }
     );
 
-    return mongoose.model('Kata', kataSchema);
+    return mongoose.model('Katas', kataSchema);
 
 }
